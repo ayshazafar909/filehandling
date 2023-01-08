@@ -1,0 +1,28 @@
+#include<iostream>
+	#include<fstream>
+	using namespace std;
+	int main()
+	{
+		ofstream myfile;
+		myfile.open("word.txt");
+		myfile<<"Hello World";
+		myfile.close();
+		ofstream myfile2;
+		myfile.open("word2.txt");
+		myfile<<"Aysha Malik";
+		myfile2.close();
+		char a[30],ch,st[1000];
+		int tot=0,i=0,totword=0;
+		cout<<"Enter a File name:"<<endl;
+		cin>>a;
+		ifstream file;
+		file.open(a,ifstream::in);
+		if(!file)
+		{
+			cout<<endl<<"File does not exist";
+		}
+		while(file>>noskipws>>ch)
+		{
+			st[tot]=ch;
+			tot++;
+		}
